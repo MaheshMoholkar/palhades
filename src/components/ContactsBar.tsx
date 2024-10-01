@@ -21,7 +21,7 @@ function ContactsBar() {
           className="md:flex hidden items-center gap-3 md:ml-7"
           variants={SlideDown(0.4, 50)}
           initial="initial"
-          animate="animate"
+          whileInView="animate"
         >
           <MapPin size={20} color="#fff" />
           <a href="https://maps.app.goo.gl/dtBzATAaPLJeusLcA">
@@ -31,7 +31,7 @@ function ContactsBar() {
         <motion.div
           variants={SlideDown(0.6, 50)}
           initial="initial"
-          animate="animate"
+          whileInView="animate"
           className="flex items-center justify-between gap-2 md:gap-4 md:mr-7"
         >
           <Phone size={20} color="#fff" />
