@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import ReactPlayer from "react-player";
+import { SlideRight } from "../animations/animate";
 
 const Video = ({
   playing,
@@ -30,30 +32,31 @@ const Video = ({
   }, [replay, setReplay, setShowLogo]);
 
   return (
-    <div className="player-wrapper">
+    <motion.div
+      variants={SlideRight(0.4, 150)}
+      initial="initial"
+      whileInView="animate"
+      className="player-wrapper"
+    >
       {showLogo ? (
         <div
           className="absolute
           inset-0 flex items-center justify-center"
         >
-          <img
-            src="src/assets/logo.jpg"
-            alt="Video Player"
-            className="rounded-full"
-          />
+          <img src="/logo.jpg" alt="Video Player" className="rounded-full" />
         </div>
       ) : (
         <ReactPlayer
           ref={playerRef}
           className="react-player"
-          url="src/assets/palhades-demo.mp4"
+          url="/palhades-demo.mp4"
           width="100%"
           height="100%"
           controls={false}
           playing={playing}
         />
       )}
-    </div>
+    </motion.div>
   );
 };
 

@@ -4,21 +4,38 @@ import {
   Truck,
   UserCheck,
 } from "@phosphor-icons/react";
+import { motion } from "framer-motion";
+import { SlideUp } from "../animations/animate";
 
 function ServicesSection() {
   return (
     <>
       <div className="flex flex-col text-center items-center">
-        <div className="text-fuchsia-100 p-3 mt-16 font-semibold">
+        <motion.div
+          variants={SlideUp(0.2, 50)}
+          initial="initial"
+          whileInView="animate"
+          className="text-fuchsia-100 p-3 mt-16 font-semibold"
+        >
           WHY CHOOSE US
-        </div>
+        </motion.div>
 
-        <div className="text-lg md:text-4xl font-semibold w-1/2 text-white p-3 mb-10">
+        <motion.div
+          variants={SlideUp(0.4, 50)}
+          initial="initial"
+          whileInView="animate"
+          className="text-lg md:text-4xl font-semibold w-1/2 text-white p-3 mb-10"
+        >
           Prioritizing safety and comfort with flexible booking and
           comprehensive travel solutions.
-        </div>
+        </motion.div>
         <div className="flex flex-col md:flex-row mb-24 mx-3">
-          <div className="flex flex-col items-center p-7">
+          <motion.div
+            variants={SlideUp(0.6, 150)}
+            initial="initial"
+            whileInView="animate"
+            className="flex flex-col items-center p-7"
+          >
             <div className="rounded-full bg-fuchsia-100 p-4">
               <CarSimple size={32} className="text-theme" />
             </div>
@@ -30,8 +47,13 @@ function ServicesSection() {
               individuals commuting to work or other destinations on a daily
               basis
             </div>
-          </div>
-          <div className="flex flex-col items-center p-7">
+          </motion.div>
+          <motion.div
+            variants={SlideUp(0.8, 150)}
+            initial="initial"
+            whileInView="animate"
+            className="flex flex-col items-center p-7"
+          >
             <div className="rounded-full bg-fuchsia-100 p-4">
               <Truck size={32} className="text-theme" />
             </div>
@@ -43,9 +65,13 @@ function ServicesSection() {
               or transportation for a special event, our cab service is just a
               phone call away
             </div>
-          </div>
-
-          <div className="flex flex-col items-center p-7">
+          </motion.div>
+          <motion.div
+            variants={SlideUp(1, 150)}
+            initial="initial"
+            whileInView="animate"
+            className="flex flex-col items-center p-7"
+          >
             <div className="rounded-full bg-fuchsia-100 p-4">
               <UserCheck size={32} className="text-theme" />
             </div>
@@ -56,8 +82,13 @@ function ServicesSection() {
               In addition to our cab services, we provide skilled drivers and a
               wide range of vehicles for comfortable and safe personal travel.
             </div>
-          </div>
-          <div className="flex flex-col items-center p-7">
+          </motion.div>
+          <motion.div
+            variants={SlideUp(1.2, 150)}
+            initial="initial"
+            whileInView="animate"
+            className="flex flex-col items-center p-7"
+          >
             <div className="rounded-full bg-fuchsia-100 p-4">
               <AirplaneTakeoff size={32} className="text-theme" />
             </div>
@@ -69,7 +100,7 @@ function ServicesSection() {
               tour packages suitable for individuals, couples, families, and
               groups.
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
