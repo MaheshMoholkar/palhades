@@ -10,13 +10,6 @@ export default {
         card: "#c643db",
         backgroud: "#dee5ff",
       },
-      backgroundImage: {
-        "hero-pattern": "url('./hero.svg')",
-        "service-pattern": "url('./transport.svg')",
-      },
-      backgroundPosition: {
-        "hero-shifted": "center -40px",
-      },
     },
   },
   plugins: [require("@tailwindcss/aspect-ratio")],

@@ -10,13 +10,28 @@ import ServicesSection from "../components/ServicesSection";
 import { Testimonial } from "../components/Testimonial";
 
 function Home() {
+  const heroStyle = {
+    backgroundImage: "url('./hero.svg')",
+    backgroundPosition: "center -40px",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  };
+
+  const serviceStyle = {
+    backgroundImage: "url('./transport.svg')",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "bottom",
+  };
+
   return (
     <>
       <ContactsBar />
       <NavBar />
       <div className="relative overflow-hidden">
         <motion.div
-          className="z-5 bg-hero-pattern bg-hero-shifted bg-no-repeat bg-cover mb-8"
+          className="z-5 mb-8"
+          style={heroStyle}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -34,10 +49,11 @@ function Home() {
       <AboutUs />
       <div className="relative overflow-hidden">
         <motion.div
+          style={serviceStyle}
+          className="overlay"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="bg-service-pattern overlay bg-no-repeat bg-cover bg-bottom"
         >
           <ServicesSection />
         </motion.div>
@@ -48,15 +64,9 @@ function Home() {
           transition={{ duration: 1, ease: "easeInOut" }}
         />
       </div>
-      <div>
-        <Testimonial />
-      </div>
-      <div>
-        <Contact />
-      </div>
-      <div>
-        <Footer />
-      </div>
+      <Testimonial />
+      <Contact />
+      <Footer />
     </>
   );
 }
